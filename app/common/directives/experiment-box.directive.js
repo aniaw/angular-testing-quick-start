@@ -9,7 +9,7 @@
             element.on('click', function ()
             {
                 ctrl.doExperiment();
-            })
+            });
         };
 
         var controller = function ($scope)
@@ -31,6 +31,6 @@
             link: linker,
             controller: controller,
             controllerAs: 'expBoxCtrl'
-        }
+        };
     });
 })();

@@ -18,6 +18,6 @@
         return {
             getMessage: getMessage,
             setMessage: setMessage
-        }
+        };
     });
 })();

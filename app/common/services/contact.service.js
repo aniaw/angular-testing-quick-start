@@ -1,6 +1,7 @@
 (function ()
 {
-    // 'use strict'; why you should use `use strict`
+    //TODO show previous commit without 'use strict', jshint
+    'use strict';
 
     angular.module('app').service('ContactService', function ()
     {
@@ -9,23 +10,27 @@
 
         this.save = function (contact)
         {
-            if (contact.id == null) {
-                contact.id = uid++;
-                contacts.push(contact);
-            } else {
-
-                for (i in contacts) {
-                    if (contacts[i].id == contact.id) {
+            function update()
+            {
+                for (var i in contacts) {
+                    if (contacts[i].id === contact.id) {
                         contacts[i] = contact;
                     }
                 }
+            }
+
+            if (contact.id === null) {
+                contact.id = uid++;
+                contacts.push(contact);
+            } else {
+                update();
             }
         };
 
         this.get = function (id)
         {
-            for (i in contacts) {
-                if (contacts[i].id == id) {
+            for (var i in contacts) {
+                if (contacts[i].id === id) {
                     return contacts[i];
                 }
             }
@@ -33,8 +38,8 @@
 
         this.delete = function (id)
         {
-            for (i in contacts) {
-                if (contacts[i].id == id) {
+            for (var i in contacts) {
+                if (contacts[i].id === id) {
                     contacts.splice(i, 1);
                 }
             }
@@ -43,6 +48,6 @@
         this.list = function ()
         {
             return contacts;
-        }
+        };
     });
 })();

@@ -1,7 +1,8 @@
-fdescribe('ContactService', function ()
+describe('ContactService', function ()
 {
+    'use strict';
+
     var contactService;
-    var contacts;
 
     beforeEach(module('app'));
 
@@ -25,7 +26,7 @@ fdescribe('ContactService', function ()
 
             it('should add new contact', function ()
             {
-                expect(contactService.list()).toEqual([{id: 1, name: 'Gepard'}])
+                expect(contactService.list()).toEqual([{id: 1, name: 'Gepard'}]);
             });
         });
         describe('when contact id exists in contacts', function ()
@@ -47,13 +48,13 @@ fdescribe('ContactService', function ()
 
             it('should return list of added contacts', function ()
             {
-                expect(contactService.list()).toEqual(notUpdatedContactList)
+                expect(contactService.list()).toEqual(notUpdatedContactList);
             });
 
             it('should update indicated contact', function ()
             {
                 contactService.save({id: 2, name: 'Marty'});
-                expect(contactService.list()).toEqual(updatedContactList)
+                expect(contactService.list()).toEqual(updatedContactList);
             });
         });
     });

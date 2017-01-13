@@ -29,7 +29,7 @@
         ctrl.editContact= function (id)
         {
             ctrl.newContact = angular.copy(ContactService.get(id));
-        }
+        };
     });
 
 })();

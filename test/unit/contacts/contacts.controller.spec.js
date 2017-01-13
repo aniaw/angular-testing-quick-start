@@ -1,5 +1,7 @@
 describe('ContactCtrl', function ()
 {
+    'use strict';
+
     var contactsCtrl;
     var ContactServiceMock;
 
@@ -45,7 +47,7 @@ describe('ContactCtrl', function ()
         it('should call ContactService.list only once', function ()
         {
             expect(ContactServiceMock.list.calls.count()).toBe(1);
-        })
+        });
     });
 
     describe('saveContact', function ()

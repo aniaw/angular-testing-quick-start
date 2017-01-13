@@ -21,6 +21,6 @@
                 {
                     Messages.setMessage(m);
                 };
-            })
+            });
 
 })();
